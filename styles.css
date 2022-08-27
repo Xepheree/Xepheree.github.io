@@ -1,0 +1,191 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body{
+    
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.top{
+    display: flex;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+}
+
+.menu{
+    display: flex;
+    background:linear-gradient(to top,rgb(240, 240, 240),rgb(231, 231, 231));
+    color: rgb(24, 24, 24);
+    text-shadow: 2px 3px #ffffff;
+    box-shadow: 10px 7px rgba(0,0,0,0.15);
+    flex: 2;
+    letter-spacing: 1.5px;
+}
+
+.logo{
+flex: 1;
+max-height: 100px;
+max-width: 100px;
+margin: 10px;
+}
+
+.welcome{
+    font-size: 1.5rem;
+    margin: 0.5rem;
+    font-weight: bold;
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.menu-links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    transition: all 0.2s ease;
+}
+
+.menu-links .mainUL{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+
+.menu-links .main-link{
+    list-style: none;
+    flex: 1;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+.menu-links a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+    display: block;
+    padding:10px;
+}
+
+.menu-links .subUL{
+    position: absolute;
+    width: 18rem;
+    display: none;
+    flex-direction: column;
+    background: linear-gradient(to top,rgb(240, 240, 240),rgb(231, 231, 231)) ;
+}
+
+
+.subUL li{
+list-style: none;
+float:left;
+padding: 20px;
+}
+
+.subUL a{
+    font-size: 1rem;
+    text-align: left;
+}
+
+.menu-links .main-link:hover ul{
+    display: flex;
+    transition: 0.2s ease-in;
+}
+
+
+.menu-links a:hover{
+    background-color: rgba(0,0,0,0.05);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/* Burger */
+.burger div{
+    width: 25px;
+    height: 3px;
+    margin:5px;
+    background-color: rgb(24, 24, 24);
+    margin-right: 25px;
+    display: none;
+    transition: all 0.3s ease;
+}
+.burger:hover{
+    cursor: pointer;
+}
+
+@media screen and (max-width:1000px){ /* These are the design when the burger button is ready */
+    body{
+        overflow-x:hidden ;
+    }
+
+    .menu{
+        align-items: center;
+        justify-content: center;
+    }
+    .menu-links{
+        position: absolute;
+        right: 50px;
+        top: 90px;
+        width:230px;
+        height: 300px;
+        background: linear-gradient(to top,rgb(240, 240, 240),rgb(231, 231, 231));
+        transform: translateX(130%);
+        box-shadow: 10px 7px rgba(0,0,0,0.15);
+    }
+    
+    .subUL{
+        transform: translateX(-100%) translateY(-6%);
+    }
+
+    .subUL li{
+        padding: 0px;
+        }
+
+    .menu-links ul{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-links li{
+        margin: 15px;
+    }
+
+    .burger div{
+        display: block;
+    }
+
+    .menu-links-active{
+        transform: translate(0);
+    }
+}
+
+@keyframes navLinkFade {
+    from{
+        opacity: 0;
+        transform:translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+
+.toggle .line2{
+opacity: 0 ;
+}
+
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+}
